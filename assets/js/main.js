@@ -173,8 +173,8 @@ function drawChart() {
         .datum((d) => getPathCoordinates(d))
         .attr("d", line)
         .attr("stroke-width", 3)
-        .attr("stroke", (_, i) => "darkorange")
-        .attr("fill", (_, i) => "darkorange")
+        .attr("stroke", (_, i) => "hsl(214, 89%, 52%)")
+        .attr("fill", (_, i) => "hsl(214, 89%, 52%)")
         .attr("stroke-opacity", 1)
         .attr("opacity", 0.5)
     );
