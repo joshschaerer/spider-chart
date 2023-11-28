@@ -10,6 +10,8 @@
 // Initialize all data
 let features = [
   "Deutsch",
+  "Englisch",
+  "Französisch",
   "Mathematik",
   "Natur, Mensch, Gesellschaft",
   "Bildnerisches, Textiles und Technisches Gestalten",
@@ -29,10 +31,10 @@ let features = [
 ];
 let selectedFeatures = [
   "Deutsch",
+  "Englisch",
+  "Französisch",
   "Mathematik",
   "Natur, Mensch, Gesellschaft",
-  "Bildnerisches, Textiles und Technisches Gestalten",
-  "Musik",
 ];
 let selectedValues = [10, 10, 10, 10, 10];
 
