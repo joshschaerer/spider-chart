@@ -196,7 +196,36 @@ function drawChart(id, title, selectedFeatures, selectedValues) {
               d.label_coord.x
             }, ${d.label_coord.y})`
         )
-        .text((d) => d.name)
+        .each(function (d) {
+          const text = d.name;
+          const maxCharsPerLine = 26;
+          const words = text.split(/\s+/);
+          let lines = [];
+          let currentLine = words[0];
+
+          for (let i = 1; i < words.length; i++) {
+            const lineWithNextWord = currentLine + " " + words[i];
+
+            if (lineWithNextWord.length <= maxCharsPerLine) {
+              currentLine = lineWithNextWord;
+            } else {
+              lines.push(currentLine);
+              currentLine = words[i];
+            }
+          }
+
+          lines.push(currentLine);
+          lines.reverse();
+
+          for (let i = 0; i < lines.length; i++) {
+            d3.select(this)
+              .append("tspan")
+              .text(lines[i])
+              .attr("dy", i === 0 ? 0 : "-1.2em")
+              .attr("x", d.label_coord.x)
+              .attr("text-anchor", "middle");
+          }
+        })
     );
 
   // Plotting the data
