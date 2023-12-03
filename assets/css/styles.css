@@ -3,6 +3,15 @@
   display: grid;
 }
 
+.section {
+  padding: 2rem;
+}
+
+.section__title {
+  display: none;
+  text-align: center;
+}
+
 .form {
   --_gap: 1rem;
   align-items: center;
@@ -11,8 +20,27 @@
   gap: var(--_gap);
 }
 
+.form__div button + a {
+  margin-left: 1rem;
+}
+
 @media (min-width: 1024px) {
   .container {
+    grid-template-areas:
+      "heading heading"
+      "chart form";
     grid-template-columns: 1fr 1fr;
+  }
+
+  .section__title {
+    grid-area: heading;
+  }
+
+  .chart {
+    grid-area: chart;
+  }
+
+  .form {
+    grid-area: form;
   }
 }
