@@ -111,7 +111,7 @@ function drawChart(id, title, selectedFeatures, selectedValues) {
         .attr("cy", height / 2)
         .attr("fill", "none")
         .attr("stroke", (d) =>
-          d % 2.5 === 0 ? "hsla(0, 0%, 2%, 0.2)" : "hsla(0, 0%, 2%, 0.05)"
+          d % 2.5 === 0 ? "hsla(0, 0%, 2%, 0.3)" : "hsla(0, 0%, 2%, 0.1)"
         )
         .attr("stroke-width", (d) => (d % 2.5 === 0 ? 1.25 : 1))
         .attr("r", (d) => radialScale(d))
@@ -223,7 +223,9 @@ function drawChart(id, title, selectedFeatures, selectedValues) {
               .text(lines[i])
               .attr("dy", i === 0 ? 0 : "-1.2em")
               .attr("x", d.label_coord.x)
-              .attr("text-anchor", "middle");
+              .attr("text-anchor", "middle")
+              .attr("font-family", "dchbasisschriftregular")
+              .attr("font-size", "26px");
           }
         })
     );
