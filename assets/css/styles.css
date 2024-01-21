@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "dchbasisschriftregular";
+  src: url("../font/dch-basisschrift-webfont.woff2") format("woff2"),
+    url("../font/dch-basisschrift-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .container {
   align-items: center;
   display: grid;
